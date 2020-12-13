@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hindsight/UI/AboutPage.dart';
+import 'package:hindsight/UI/BibliographyPage.dart';
+import 'package:hindsight/UI/GamePlayInterface.dart';
 
 
 
@@ -21,19 +24,26 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: (){}, child: Text("New Game")),
+                child: OutlinedButton(onPressed: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> GamePlayInterface()));
+                }, child: Text("New Game")),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: (){}, child: Text("Continue Game")),
+                child: OutlinedButton(onPressed: (){}, child: Text("Continue Game")), //todo hide if no player object exists
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: (){}, child: Text("About")),
+                child: OutlinedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> AboutPage()));
+                }, child: Text("About")),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: (){}, child: Text("Biblography")),
+                child: OutlinedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> BiblographyPage()));
+                }, child: Text("Bibliography")),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
