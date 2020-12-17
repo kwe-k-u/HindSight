@@ -18,7 +18,7 @@ class _GamePlayInterfaceState extends State<GamePlayInterface> {
     super.initState();
     setState(() {
 
-      current = engine.getNext("first");
+      current = engine.current.tile;
     });
   }
 
@@ -62,7 +62,32 @@ class _GamePlayInterfaceState extends State<GamePlayInterface> {
                       .height * 0.4,
                   child: Column(
                     // children: [Text("some"),current.getChoices()],
-                    children: buttonList(current.next),
+                    children: [
+
+
+                      //left
+                      RaisedButton
+                        (onPressed: (){
+                        setState(() {
+                          engine.current = engine.current.left;
+                          current = engine.current.tile;
+                        });
+                      },
+                        child: Text(current.actions[0]),
+                      ),
+
+                      //left
+                      RaisedButton
+                        (onPressed: (){
+                        setState(() {
+                          engine.current = engine.current.right;
+                          current = engine.current.tile;
+                        });
+                      },
+                        child: Text(current.actions[1]),
+                      ),
+
+                    ],
                   )
               ),
             ],
@@ -72,22 +97,4 @@ class _GamePlayInterfaceState extends State<GamePlayInterface> {
     );
   }
 
-
-  List<Widget> buttonList( List<String> d){
-  List<Widget> buttons = [];
-  print(current.actions.length);
-  print(current.title);
-  for (int index = 0; index < current.next.length; index++){
-    buttons.add(RaisedButton(onPressed: (){
-      setState(() {
-        current = engine.getNext(current.next.elementAt(index));
-
-      });
-    },
-      child: Text(current.actions.elementAt(index)),
-    ));
-  }
-
-  return buttons;
-  }
 }
