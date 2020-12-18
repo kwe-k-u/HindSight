@@ -8,6 +8,8 @@ class BiblographyPage extends StatelessWidget {
       home: Scaffold(
         body: Container(
           child: ListView(
+            padding: EdgeInsets.all(12.0),
+
           children: [
             //todo use rich text
             Text("Haiti: A Long Descent to Hell | World News | The Guardian. "

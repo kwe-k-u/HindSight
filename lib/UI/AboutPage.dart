@@ -11,6 +11,7 @@ class AboutPage extends StatelessWidget {
 
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           child: Column(

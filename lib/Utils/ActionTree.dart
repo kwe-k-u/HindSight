@@ -49,11 +49,15 @@ class Action{
   Action right;
   Action left;
   String identifier;
+  Image image;
+  String summary;
   double escapeProbability = 0.5;
   Tile tile;
 
-  Action({Tile tile, double escapeProbability,}){
+  Action({Tile tile, double escapeProbability,String summary}){
     this.tile = tile;
+    this.escapeProbability = escapeProbability;
+    this.summary = summary;
   }
 
   // void setRight(Act)
