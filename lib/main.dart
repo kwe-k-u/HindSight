@@ -33,4 +33,6 @@ class MyApp extends StatelessWidget {
 }
 
 
+//todo ask for storage permission for ios
+
 

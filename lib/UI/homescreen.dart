@@ -4,6 +4,7 @@ import 'package:hindsight/UI/AboutPage.dart';
 import 'package:hindsight/UI/BibliographyPage.dart';
 import 'package:hindsight/UI/CreatePlayer.dart';
 import 'package:hindsight/UI/GamePlayInterface.dart';
+import 'package:hindsight/UI/Privacy.dart';
 
 
 
@@ -33,7 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: (){}, child: Text("Continue Game")), //todo hide if no player object exists
+                child: OutlinedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> GamePlayInterface()));
+                },
+                    child: Text("Continue Game")), //todo hide if no player object exists
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -46,6 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: OutlinedButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> BiblographyPage()));
                 }, child: Text("Bibliography")),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> PrivacyPage()));
+                }, child: Text("Privacy")),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

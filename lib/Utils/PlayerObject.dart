@@ -1,5 +1,7 @@
 
 
+import 'package:flutter/material.dart';
+
 class Player{
   String name;
   int age = 0;
@@ -41,6 +43,15 @@ class Player{
 
 
   return map;
+  }
+
+
+
+  void fromMap(dynamic data){
+    if (data.runtimeType == String)
+      data = Map<String, dynamic>.from(data);
+
+    //todo match data to attributes
   }
 
 
