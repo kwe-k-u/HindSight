@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:hindsight/Utils/EventList.dart';
 
 ThemeData theme = ThemeData(
-  canvasColor: Colors.brown[300],
+  canvasColor: Colors.white,
+  // canvasColor: Colors.brown[300],
 );
 
-Color buttonColor = Colors.brown[900];
+Color buttonColor = Colors.blue;
+// Color buttonColor = Colors.brown[900];
 
 
 
@@ -19,7 +21,7 @@ Event intro = Event(
       " and Black Americans during the Trans-Atlantic Slavery. This is to help"
       " disprove misconceptions that enslaved persons were docile. These events are "
       "factual and links to research papers from which they are sourced are provided "
-      "in the application Bibliography. However, tapping on the images of some "//todo word for pedastal
+      "in the application Bibliography. However, tapping on the images of some "
       "pedastals will redirect you to a Jstor article or a website from which the "
       "information is sourced",
   next: haiti,
@@ -29,14 +31,15 @@ Event intro = Event(
 
 Event haiti = Event(
   title: "Long Descent to Hell",
-  text: "Have they not hung up men with heads downward, drowned them in sacks, "
+  text: "\"Have they not hung up men with heads downward, drowned them in sacks, "
       "crucified them on planks, buried them alive, crushed them in mortars? "
       "Have they not forced them to eat excrement? Have they not thrown them into "
       "boiling cauldrons of cane syrup? Have they not put men and women inside "
-      "barrels studded with spikes and rolled them down mountainsides into the abyss?",
+      "barrels studded with spikes and rolled them down mountainsides into the abyss?\". Formerly enslaved person according to the guardian.",
   url: "https://www.theguardian.com/world/2010/jan/14/haiti-history-earthquake-disaster",
-  reference: "Haiti: A Long Descent to Hell | World News | The Guardian. "
-      "https://www.theguardian.com/world/2010/jan/14/haiti-history-earthquake-disaster. Accessed 18 Nov. 2020",
+  reference: "The Guardian \"Haiti: A Long Descent to Hell\" . "
+      "https://www.theguardian.com/world/2010/jan/14/haiti-history-"
+      "earthquake-disaster. Accessed 18 Nov. 2020.",
   next: elmina,
 );
 
@@ -47,7 +50,7 @@ Event elmina = Event(
       "Cape Coast Castle in Ghana (called Gold Coast at the time). As described by Stephanie Smallwood in "
       "Saltwater Slavery, 'A dungeonlike undergroud prison was built into the rock foundation"
       " at Cape Coast Castle by at least 16882'(pg 37)",
-  reference: "",//todo get stephanie smallwood reference
+  reference: "Smallwood, Stephanie E. Saltwater Slavery : a Middle Passage from Africa to American Diaspora. Cambridge, Mass. :Harvard University Press, 2007.",
   next: smallwood
 );
 
@@ -56,18 +59,18 @@ Event smallwood = Event(
   text: "Due to the high humidity and presence of salt in the atmosphere along the coast of Gold Coast, "
       "the shackles used to chain captured people became brittle. This led to a constant shortage of chains and"
       "shuckles, allowing captured natives to escape frequently",
-  reference: "", //todo smallwood reference
+  reference: "Smallwood, Stephanie E. Saltwater Slavery : a Middle Passage from Africa to American Diaspora. Cambridge, Mass. :Harvard University Press, 2007.",
   date: "1682",
   next: akwamu
 );
 
 
 Event akwamu = Event (
-  title: "James Tow",
+  title: "James Town",
   text: "Castles in James Town (Now a town in Accra) were supplied with enslaved people as a result of the wars fought by"
       " the Akwamu people and neighbouring empires. These captives were held in the James Towns castles for weeks before "
       "either being transported by slave ships abroad or by a coasting vessel to the Cape Coast Castle",
-  reference: "", //todo smallwood reference
+  reference: "Smallwood, Stephanie E. Saltwater Slavery : a Middle Passage from Africa to American Diaspora. Cambridge, Mass. :Harvard University Press, 2007.",
   next: barbadozzed,
 );
 
@@ -167,7 +170,7 @@ Event consequences = Event(
 
 
 Event shot = Event(
-  title: "Throwing jabs",//todo use more appropriate term
+  title: "Throwing jabs",
   text: "While discussing America's desire to gain independence from Britain, Samuel Johnson passed the comment,"
       "\"How is it that we hear the loudest yelps for liberty among the drivers of Negros\"",
   reference: "Johnson, Samuel. “Taxation No Tyranny; an Answer to the Resolutions and Address of the American Congress [1775].”"

@@ -23,84 +23,45 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
     });
   }
 
-//todo add link to linkedin profile
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return MaterialApp(
       theme: theme,
       debugShowCheckedModeBanner: false,
-      //todo clicking on image will redirect to a url
       home: Scaffold(
         body: Container(
-          padding: EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Container(
-              //   height: MediaQuery.of(context).size.height * 0.15,
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //
-              //       RaisedButton.icon(
-              //         padding: EdgeInsets.only(right: 2.0),
-              //         label: Container(width: 0,height: 0,),
-              //         icon: Icon(Icons.home_outlined),
-              //         onPressed: (){
-              //           showDialog(context: context,
-              //           builder: (context) => AlertDialog(
-              //             content: Text("Do you wish to save your current progress? "),
-              //             actions: [
-              //               FlatButton(
-              //                 child: Text("Cancel"),
-              //                 onPressed: (){
-              //                   Navigator.pop(context);
-              //
-              //                 },
-              //               ),
-              //
-              //               FlatButton(
-              //                 child: Text("Dont save"),
-              //                 onPressed: (){
-              //                   Navigator.push(context,
-              //                       MaterialPageRoute(builder: (context)=> HomeScreen()));
-              //                 },
-              //               ),
-              //
-              //               FlatButton(
-              //                 child: Text("Save"),
-              //                 onPressed: (){
-              //                   //Todo save progress
-              //                   Navigator.push(context,
-              //                       MaterialPageRoute(builder: (context)=> HomeScreen()));
-              //                 },
-              //               ),
-              //             ],
-              //           ));
-              //         },
-              //       ),
-              //       Text("Health: 300"),
-              //       Text(engine.getDate(), style: TextStyle(
-              //         fontSize: 18.0
-              //       ),),
-              //       Text("Age: 10"),
-              //     ],
-              //   ),
-              // ),
-              Divider(thickness: 2.0,),
 
 
               Container(
+                padding: EdgeInsets.symmetric(horizontal:12.0),
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: Center(child: Text(list.current.title,
+                style: TextStyle(
+                  // fontFamily: ,
+                  fontWeight: FontWeight.bold,
+                ),)),
+              ),
+
+
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal:12.0),
                 height: MediaQuery.of(context).size.height * 0.4,
                 child: Center(child: Text(list.current.text)),
               ),
 
 
+
               Container(
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height * 0.4,
+                child: Center(child: Text(list.current.reference)),
+              ),
+
+
+              Container(
                   child: Column(
                     children: [
 
@@ -113,9 +74,11 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                           onPressed: (){
                           setState(() {
                             list.current = list.current.next;
+                            if (list.current == null)
+                              list.current = list.head;
                           });
                         },
-                          child: Text("Next pedestile"), //todo find the right word
+                          child: Text("Next pedastal"),
                         ),
                       ),
 
@@ -127,9 +90,11 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                           onPressed: (){
                           setState(() {
                             list.current = list.current.previous;
+                            if (list.current == null)
+                              list.current = list.head;
                           });
                         },
-                          child: Text("Previous pedastile"), //todo find the right word
+                          child: Text("Previous pedastal"),
                         ),
                       ),
 
@@ -138,13 +103,16 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                         width: size.width * 0.8,
                         child: RaisedButton(
                           color: buttonColor,
-                          child: Text("Attempt escape (3)"),
+                          child: Text("Random pedastal"),
                           onPressed: (){
-                            int number = new Random().nextInt(5); //todo add number of events
+                            int number = new Random().nextInt(14);
                             list.current = list.head;
                             for (int index = 0; index < number; index++) {
                               list.current = list.current.next;
                             }
+                            setState(() {
+
+                            });
                           },
                         ),
                       )

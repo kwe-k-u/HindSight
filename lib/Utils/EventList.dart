@@ -13,6 +13,7 @@ class EventList{
 
   EventList(){
     head = intro;
+    current = head;
   }
 
   Event findCurrent(String identifier){
@@ -58,6 +59,7 @@ class Event{
    this.url = url;
    this.image = image;
    this.date = date;
+   if (next != null)
    this.next.previous = this;
    //todo generate identifier
   }
