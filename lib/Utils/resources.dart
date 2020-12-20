@@ -12,3 +12,9 @@ ThemeData theme = ThemeData(
 );
 
 Color buttonColor = Colors.brown[900];
+
+
+
+
+
+//List of actions available in the game
