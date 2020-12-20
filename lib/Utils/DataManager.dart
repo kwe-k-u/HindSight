@@ -19,28 +19,22 @@ class DataManager {
     return File('$path/gameData.txt');
   }
 
-  Future<Map<String, dynamic>> readFile() async {
+  Future<String> readFile() async {
     try {
       final file = await _localFile;
 
       // Read the file
       String contents = await file.readAsString();
 
-      print(contents);
-
-      //todo complete
-      print("mum run ${json.decode(contents).runtimeType}");
-      Map<String, dynamic> m = json.decode(contents);
-      return m;
+      return contents;
     } catch (e) {
-      // If encountering an error, return 0
 
       print ("read failed");
       return null;
     }
   }
 
-  Future<File> writeFile(Map<String,dynamic> map) async {
+  Future<File> writeFile(String map) async {
     final file = await _localFile;
 
     // Write the file

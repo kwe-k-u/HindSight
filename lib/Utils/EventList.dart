@@ -2,7 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'Engine.dart';
 //Using a single linked list to simulate thread of events
 class EventList{
   Event head;
@@ -11,7 +10,7 @@ class EventList{
 
 
   EventList(){
-    // root  =
+    head = intro;
   }
 
   Event findCurrent(String identifier){
@@ -41,17 +40,22 @@ class EventList{
 class Event{
   Event previous;
   Event next;
+  String text;
   String identifier;
   Image image;
   String url;
-  Tile tile;
+  String date;
 
-  Event({Tile tile, String url}){
-    this.tile = tile;
-    this.url = url;
+  Event({String text, String url, Event next, Event previous, Image image, String date}){
+   this.previous = previous;
+   this.next = next;
+   this.text = text;
+   this.url = url;
+   this.image = image;
+   this.date = date;
+   //todo generate identifier
   }
 
-  // void setRight(Act)
 
 }
 
@@ -59,12 +63,9 @@ class Event{
 
 
 Event intro = new Event (
-    tile: new Tile(
-        text: "The setting ",
-        actions: ["left run", "left stay"]),
 );
 
 
 
 
-Event right = new Event (tile: new Tile(text: "right", actions: ["right run", "right stay"]));
+Event right = new Event ();
