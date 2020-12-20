@@ -1,10 +1,12 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:hindsight/Utils/resources.dart';
 
 //Using a single linked list to simulate thread of events
 class EventList{
   Event head;
+  Event current;
 
 
 
@@ -40,19 +42,23 @@ class EventList{
 class Event{
   Event previous;
   Event next;
-  String text;
-  String identifier;
+  String text = "";
+  String title = "";
+  String identifier = "";
   Image image;
-  String url;
-  String date;
+  String url = "";
+  String date = "";
+  String reference = "";
 
-  Event({String text, String url, Event next, Event previous, Image image, String date}){
-   this.previous = previous;
+  Event({String title, String text, String url, Event next, String reference, Image image, String date}){
+   this.title = title;
+   this.reference = reference;
    this.next = next;
    this.text = text;
    this.url = url;
    this.image = image;
    this.date = date;
+   this.next.previous = this;
    //todo generate identifier
   }
 
@@ -61,11 +67,3 @@ class Event{
 
 
 
-
-Event intro = new Event (
-);
-
-
-
-
-Event right = new Event ();

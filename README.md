@@ -1,6 +1,10 @@
 # hindsight
 
-A new Flutter application.
+This application is a virtual recount of historical events linked to slavery between 1600 and
+1900. These events highlight the strength of Africans and African American communities and
+individuals during the fight for freedom. The application was designed by Kweku Appiah Acquaye
+as a final project for Capitalism and Slavery during the OSUN program with Bard College in the
+summer of 2020.
 
 ## Getting Started
 

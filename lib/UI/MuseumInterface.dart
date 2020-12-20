@@ -13,24 +13,24 @@ class MuseumInterface extends StatefulWidget {
 
 class _MuseumInterfaceState extends State<MuseumInterface> {
   EventList list = new EventList();
-  Event current;
 
   @override
   void initState() {
     super.initState();
     setState(() {
 
-      current = list.head;
+      list.current = list.head;
     });
   }
 
-
+//todo add link to linkedin profile
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return MaterialApp(
       theme: theme,
       debugShowCheckedModeBanner: false,
+      //todo clicking on image will redirect to a url
       home: Scaffold(
         body: Container(
           padding: EdgeInsets.all(8.0),
@@ -92,7 +92,7 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
 
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                child: Center(child: Text(current.text)),
+                child: Center(child: Text(list.current.text)),
               ),
 
 
@@ -112,7 +112,7 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                           color: buttonColor,
                           onPressed: (){
                           setState(() {
-                            current = current.next;
+                            list.current = list.current.next;
                           });
                         },
                           child: Text("Next pedestile"), //todo find the right word
@@ -126,7 +126,7 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                           color: buttonColor,
                           onPressed: (){
                           setState(() {
-                            current = current.previous;
+                            list.current = list.current.previous;
                           });
                         },
                           child: Text("Previous pedastile"), //todo find the right word
@@ -141,9 +141,9 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
                           child: Text("Attempt escape (3)"),
                           onPressed: (){
                             int number = new Random().nextInt(5); //todo add number of events
-                            current = list.head;
+                            list.current = list.head;
                             for (int index = 0; index < number; index++) {
-                              current = current.next;
+                              list.current = list.current.next;
                             }
                           },
                         ),
