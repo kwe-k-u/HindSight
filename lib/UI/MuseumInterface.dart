@@ -57,7 +57,8 @@ class _MuseumInterfaceState extends State<MuseumInterface> {
 
 
               Container(
-                child: Center(child: Text(list.current.reference)),
+                padding: EdgeInsets.only(left: 4.0),
+                child: Center(child: Text("Reference:\n ${list.current.reference}")),
               ),
 
 
