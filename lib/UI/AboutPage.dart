@@ -14,12 +14,9 @@ class AboutPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          child: Column(
-            children: [
-              Text("Hindsight is a text based mobile game created by Kweku Appiah Acquaye"
-                  " as a final project for Capitalism and Slavery at Bard College, NY.")
-
-            ],
+          child: Center(
+            child: Text("Hindsight is a text based mobile game created by Kweku Appiah Acquaye"
+                " as a final project for Capitalism and Slavery at Bard College, NY."),
           ),
         ),
       ),
